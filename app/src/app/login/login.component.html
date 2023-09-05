@@ -1,0 +1,37 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+         <mat-toolbar color="primary">Login</mat-toolbar>
+        <form #userPost="ngForm"     fxLayoutAlign="stretch" fxLayout="column" >
+            <mat-form-field>
+              <input matInput placeholder="Email" name="email" ngModel>
+            </mat-form-field>
+          
+            <mat-form-field>
+              
+              <input matInput type="password" placeholder="Password" name="password" ngModel autocomplete="off">
+            </mat-form-field>
+            <button mat-raised-button type="submit" (click)="onSubmit(userPost.value)">Login</button>
+            <br>
+            <button mat-raised-button (click)="onclick()">Sign up</button>
+          </form>
+          <br>
+          <div *ngIf="status">
+            <form #userPost="ngForm"     fxLayoutAlign="stretch" fxLayout="column" >
+            <mat-form-field>
+              <input matInput placeholder="Name" name="name" ngModel>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Email" name="email" ngModel>
+            </mat-form-field>
+          
+            <mat-form-field>
+              
+              <input matInput type="password" placeholder="Password" name="password" ngModel autocomplete="off">
+            </mat-form-field>
+            <button mat-raised-button type="submit" (click)="onsignup(userPost.value)">Submit</button>
+          </form>
+          </div>
+    </mat-card>
+    
+</div>

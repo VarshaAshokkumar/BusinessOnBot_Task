@@ -1,0 +1,35 @@
+mat-grid-list{
+    background:whitesmoke;
+    
+}
+.datas{
+ background: skyblue;
+}
+
+button{
+    background: silver;
+}
+.disp{
+background: whitesmoke;
+}
+.dis{
+    background:skyblue;
+    }
+.mat-raised-button{
+    
+    background-color: red;
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .content > mat-card {
+    width: 200px;
+  }
+
+

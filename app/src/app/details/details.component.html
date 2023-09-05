@@ -1,0 +1,169 @@
+<mat-toolbar color="primary">{{movie.message.movie_name}}
+</mat-toolbar>
+<br>
+<mat-card class="example-card">
+    
+    <img mat-card-image src="assets/images/img.jpg" style="height: 115%;" alt="Photo not available" >
+    
+  
+  <br>
+  <mat-card-content>
+<p>Theatre Name: {{movie.message.theatre_name}}</p>
+<p>Location: {{movie.message.theatre_location}}</p>
+<p>Release date: {{movie.message.release_date |date:'EE, MMM d '}}</p>
+</mat-card-content>
+<br>
+<mat-form-field>
+     BOOKING DATE
+    <input matInput [matDatepicker]="picker" [(ngModel)] = date>
+    <mat-datepicker-toggle [for]="picker" matIconSuffix ></mat-datepicker-toggle>
+    <mat-datepicker #picker [(ngModel)] = date></mat-datepicker>
+  </mat-form-field>
+<br><br>
+
+<div>
+<button mat-raised-button (click)="onclick()">10.00</button>
+<button mat-raised-button style="left: 20px;" (click)="onclick()">2.00</button>
+<button mat-raised-button style="left: 30px;" (click)="onclick()">4.00</button>
+<button mat-raised-button style="left: 40px;" (click)="onclick()">10.30</button>
+</div>
+
+</mat-card>
+
+<mat-card class="frame" *ngIf="seats">  
+    <div>
+        <mat-form-field>
+            <mat-label>Tickets</mat-label>
+            <mat-select [(value)] = "ticket">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+              <mat-option value="6">6</mat-option>
+              <mat-option value="7">7</mat-option>
+              <mat-option value="8">8</mat-option>
+              <mat-option value="9">9</mat-option>
+              <mat-option value="10">10</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div> 
+<div class="container">
+    
+    <div class="row">
+      <div class="seat" (click) = "onselect1()" [ngClass]="seatsec" ></div>
+      <div class="seat" (click) = "onselect2()" [ngClass]="seatsec1"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+
+    <div class="row">
+      <div class="seat" ></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat sold"></div>
+      <div class="seat sold"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat sold"></div>
+      <div class="seat sold"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat sold"></div>
+      <div class="seat sold"></div>
+      <div class="seat sold"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>      
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+  </div>
+
+  <div class="screen" style="text-align: center;">Screen</div>
+
+  <mat-form-field  style="left:10px"><input matInput placeholder="email" name="email"  [(ngModel)] = email></mat-form-field>
+<br><br>
+  <button mat-raised-button style="left: 10px;" (click)="book(ticket,email)">BOOK</button>
+
+</mat-card>

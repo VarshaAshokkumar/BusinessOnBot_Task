@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">BOOK-IT
+  <mat-form-field  style="left:900px"><input matInput placeholder="search" name="search"  [(ngModel)] = search></mat-form-field>
+  <button mat-icon-button style="left:910px; background-color:red" (click)="onsearch(search)"><mat-icon>search</mat-icon></button>
+<button mat-raised-button color="primary" style="left:1000px" (click) = "onBtnclick()" >SIGN IN</button>   
+</mat-toolbar>
+
+<mat-tab-group>
+    <mat-tab label="MOVIES">
+<br><br>
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" *ngFor="let m of res.movies">
+        <mat-card class="mat-elevation-z4">
+          <img
+            mat-card-image
+            src="assets/images/img.jpg"
+          />
+          <mat-card-header>
+            <mat-card-title>{{m.movie_name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Release date: {{m.release_date |date:'EE, MMM d '}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button (click)="onBook(m)">BOOK</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+
+</mat-tab>
+
+
+<br><br><br>
+<mat-tab label="MY BOOKINGS">
+  <mat-card class="example-card" *ngIf = booked>
+    
+    <img mat-card-image src="assets/images/img.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>MOVIE:   {{booked.bookings[0].movie_name}}</p>
+      <p>SEATS:   {{booked.bookings[0].number_of_seats}}</p>
+      <p>THEATRE: {{booked.bookings[0].theatre_name}}</p>
+    </mat-card-content>
+      
+  </mat-card>
+</mat-tab>
+
+
+
+
+</mat-tab-group>
